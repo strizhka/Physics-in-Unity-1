@@ -85,9 +85,9 @@ public class ObjectMovement : MonoBehaviour
 
     private void UpdateUI()
     {
-        timeText.text = $"{_elapsedTime:F2} ñ";
+        timeText.text = $"{_elapsedTime:F2}ñ";
         float distanceTravelled = Vector3.Distance(_initialPosition, _currentPosition);
-        distanceText.text = $"{distanceTravelled:F2}";
+        distanceText.text = $"{distanceTravelled:F2}ì";
 
         if (outPosition.activeInHierarchy)
         {
@@ -171,8 +171,6 @@ public class ObjectMovement : MonoBehaviour
         inAcceleration.SetActive(false);
         outPosition.SetActive(false);
         outVelocity.SetActive(false);
-
-        Debug.Log("Task 1: Uniform movement initialized.");
     }
 
 
@@ -185,8 +183,6 @@ public class ObjectMovement : MonoBehaviour
         inAcceleration.SetActive(false);
         outPosition.SetActive(true);
         outVelocity.SetActive(false);
-
-        Debug.Log("Task 2: Uniform movement with initial position initialized.");
     }
 
     public void SetTask3()
@@ -198,8 +194,6 @@ public class ObjectMovement : MonoBehaviour
         inAcceleration.SetActive(true);
         outPosition.SetActive(true);
         outVelocity.SetActive(true);
-
-        Debug.Log("Task 3: Accelerated movement initialized.");
     }
 
     private float ParseInput(string input)
@@ -214,7 +208,6 @@ public class ObjectMovement : MonoBehaviour
             return result;
         }
 
-        Debug.LogError($"Invalid input: {input}");
         return 0f;
     }
 }
