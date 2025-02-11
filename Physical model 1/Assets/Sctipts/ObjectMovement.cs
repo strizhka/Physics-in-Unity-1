@@ -45,6 +45,8 @@ public class ObjectMovement : MonoBehaviour
     {
         if (_isMoving)
         {
+            transform.rotation = Quaternion.LookRotation(_velocity);
+
             _elapsedTime += Time.deltaTime;
 
             if (_acceleration != Vector3.zero)
